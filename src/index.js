@@ -7,7 +7,6 @@ import fileToData from './file-to-data.js'
 import imageToFile from './image-to-file.js'
 import urlToImage from './url-to-image.js'
 import jsonToExcel from './json-to-excel.js'
-import dingtalkSign from './dingtalk-sign.js'
 
 export {
   typeOf,
@@ -18,6 +17,5 @@ export {
   fileToData,
   imageToFile,
   urlToImage,
-  jsonToExcel,
-  dingtalkSign
+  jsonToExcel
 }
