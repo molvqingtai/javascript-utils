@@ -351,15 +351,3 @@ jsonToExcel(sheets,'file-name') // => file-name.xlsx
 ```
 
 
-
-### dingtalkSign
-
-> 钉钉微应用授权
-
-**Example**
-
-```javascript
-const userInfo = await dingtalk()
-console.log(userInfo)
-```
-
