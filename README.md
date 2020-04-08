@@ -1,6 +1,6 @@
 [TOC]	
 
-# JavaScript Utils library
+# JavaScript Utils Library
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) 
 
@@ -323,7 +323,7 @@ download(String): 可选，下载 Excel 文件名称，如果有此参数将尝�
 
 **Rturns**
 
-(ArrayBuffer||Url): 默认返回 ArrayBuffer，有 download 参数则返回 Blob Url
+([ArrayBuffer,String]): 默认返回 ArrayBuffer，有 download 参数则返回 Blob Url
 
 **Example**
 

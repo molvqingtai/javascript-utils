@@ -1,6 +1,12 @@
 import { utils, writeFile, write } from 'xlsx'
 import typeOf from './type-of'
 
+/**
+ * Json 数据转 Excel 文件
+ * @param {Array} sheets [sheet 列表]
+ * @param {String} download [下载 Excel 文件名称]
+ * @return {[ArrayBuffer,String]}
+ */
 const jsonToExcel = (sheets, download) => {
   typeOf(sheets) !== 'Array' && new Error('Sheets must be a array.')
   const options = { bookType: 'xlsx', type: 'array' }
