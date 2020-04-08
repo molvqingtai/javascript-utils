@@ -11,7 +11,8 @@
     "lint": "eslint \"src/**/*.js\" --fix"
   },
   "keywords": [
-    "utils"
+    "utils",
+    "javascript-utils"
   ],
   "author": "molvqingtai",
   "license": "ISC",
@@ -52,8 +53,16 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "dingtalk-javascript-env": "^1.0.2",
-    "dingtalk-javascript-sdk": "^0.2.0",
     "xlsx": "^0.15.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/molvqingtai/javascript-utils.git"
+  },
+  "author": "molvqingtai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/molvqingtai/javascript-utils/issues"
+  },
+  "homepage": "https://github.com/molvqingtai/javascript-utils#readme"
 }
