@@ -290,6 +290,10 @@ console.log(file)
 
 > 链接转换为图片，跨域图片需设置 cors
 
+**Targets**
+
+web
+
 **Arguments**
 
 url (String): 必选，图片链接
@@ -314,6 +318,10 @@ console.log(image)
 
 ### jsonToExcel
 > Json 数据转 Excel 文件
+
+**Targets**
+
+web
 
 **Arguments**
 
