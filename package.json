@@ -1,0 +1,59 @@
+{
+  "name": "javascript-utils",
+  "version": "1.0.0",
+  "description": "JavaScript 常用函数工具库。",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "dev": "npm run lint & webpack --env development & live-server --no-browser",
+    "build": "npm run lint & webpack --env production",
+    "lint": "eslint \"src/**/*.js\" --fix"
+  },
+  "keywords": [
+    "utils"
+  ],
+  "author": "molvqingtai",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "babel-loader": "^8.0.6",
+    "cache-loader": "^4.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "core-js": "^3.6.4",
+    "eslint": "^6.6.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "live-server": "^1.2.1",
+    "webpack": "^4.41.2",
+    "webpack-build-notifier": "^2.0.0",
+    "webpack-bundle-analyzer": "^3.6.1",
+    "webpack-cli": "^3.3.10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dingtalk-javascript-env": "^1.0.2",
+    "dingtalk-javascript-sdk": "^0.2.0",
+    "xlsx": "^0.15.6"
+  }
+}
