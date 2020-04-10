@@ -7,8 +7,7 @@ import typeOf from './type-of'
  */
 const templateElement = template => {
   typeOf(template) !== 'String' && new Error('Template must be a string.')
-  const element = document.createRange().createContextualFragment(template)
-  return element.firstElementChild
+  return new Range().createContextualFragment(template).firstElementChild
 }
 
 export default templateElement
