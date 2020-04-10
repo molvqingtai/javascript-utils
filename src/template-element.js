@@ -6,7 +6,7 @@ import typeOf from './type-of'
  * @return {Element} 元素对象
  */
 const templateElement = template => {
-  typeOf(template) !== 'String' && new Error('Template must be a string.')
+  if (typeOf(template) !== 'String') throw new Error('Template must be a string.')
   return new Range().createContextualFragment(template).firstElementChild
 }
 

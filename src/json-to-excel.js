@@ -8,7 +8,8 @@ import typeOf from './type-of'
  * @return {[ArrayBuffer,String]}
  */
 const jsonToExcel = (sheets, download) => {
-  typeOf(sheets) !== 'Array' && new Error('Sheets must be a array.')
+  if (typeOf(sheets) !== 'Array') throw new Error('Sheets must be a array.')
+
   const options = { bookType: 'xlsx', type: 'array' }
   const workBook = utils.book_new()
   sheets.forEach(item => {
