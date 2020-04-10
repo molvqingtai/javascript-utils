@@ -9,11 +9,11 @@
 </head>
 
 <body>
-  <h1>Utils Tests</h1>
   <script>
+    const element = utils.templateElement(`<h1> Utils Tests </h1>`)
+    document.body.append(element)
 
-    console.log('utils:', utils)
-
+    console.log(utils)
   </script>
 </body>
 

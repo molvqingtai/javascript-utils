@@ -7,6 +7,7 @@ import fileToData from './file-to-data.js'
 import imageToFile from './image-to-file.js'
 import urlToImage from './url-to-image.js'
 import jsonToExcel from './json-to-excel.js'
+import templateElement from './template-element.js'
 
 export {
   typeOf,
@@ -17,5 +18,6 @@ export {
   fileToData,
   imageToFile,
   urlToImage,
-  jsonToExcel
+  jsonToExcel,
+  templateElement
 }

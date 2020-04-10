@@ -353,9 +353,39 @@ const sheets = [
   }
 ]
 
-jsonToExcel(sheets) // => ArrayBuffer
-jsonToExcel(sheets,'file-name') // => file-name.xlsx 
+const data = jsonToExcel(sheets) 
+console.log(data)
+// => ArrayBuffer
+
+const url = jsonToExcel(sheets,'file-name') 
+// => download file-name.xlsx 
 
 ```
 
+
+
+### templateElement
+
+> 字符串模板创建元素
+
+**Targets**
+
+web
+
+**Arguments**
+
+template(String): 必选，字符串模板
+
+**Rturns**
+
+(Element): Element 对象
+
+**Example**
+
+```javascript
+const element = templateElement(`<h1> Utils Tests </h1>`)
+console.log(element)
+
+// => HTMLHeadingElement
+```
 
