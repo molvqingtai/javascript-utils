@@ -23,6 +23,6 @@ const typesMap = new Map([
   ['Object', value => !Object.entries(value).length]
 ])
 
-const isEmpty = value => !(value instanceof Element) ? typesMap.get(typeOf(value))(value) : false
+const isEmpty = value => !(Element && value instanceof Element) ? typesMap.get(typeOf(value))(value) : false
 
 export default isEmpty
