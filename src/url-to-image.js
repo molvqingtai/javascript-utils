@@ -14,7 +14,10 @@ const urlToImage = (url, cors = false) => {
     const image = new Image()
     cors && (image.crossOrigin = 'Anonymous')
     image.src = url
-    image.decode().then(() => resolve(image)).catch(e => reject(e))
+    image
+      .decode()
+      .then(() => resolve(image))
+      .catch((e) => reject(e))
   })
 }
 

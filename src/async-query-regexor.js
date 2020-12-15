@@ -9,7 +9,9 @@ import asyncLoopTimer from './async-loop-timer.js'
  */
 const asyncQueryRegexor = (attribute, regex, timeout) => {
   return asyncLoopTimer(() => {
-    return [...document.querySelectorAll(`[${attribute}]`)].filter(element => regex.test(element.getAttribute(attribute)))
+    return [...document.querySelectorAll(`[${attribute}]`)].filter((element) =>
+      regex.test(element.getAttribute(attribute))
+    )
   }, timeout)
 }
 

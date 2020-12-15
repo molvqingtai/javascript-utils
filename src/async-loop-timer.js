@@ -7,7 +7,7 @@ import isEmpty from './is-empty.js'
  * @return {Promise}
  */
 const asyncLoopTimer = (func, timeout = Infinity) => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     let timerId = null
     const startTime = +new Date()
     const timer = async () => {

@@ -12,13 +12,13 @@ const fileToData = (file, type = 'DataURL') => {
     typeOf(type) !== 'String' && reject(new Error('DataURL must be a string.'))
 
     const reader = new FileReader()
-    reader.onload = e => resolve(e.target.result)
-    reader.onerror = e => reject(new Error(e))
+    reader.onload = (e) => resolve(e.target.result)
+    reader.onerror = (e) => reject(new Error(e))
     new Map([
-      ['Text', file => reader.readAsText(file)],
-      ['DataURL', file => reader.readAsDataURL(file)],
-      ['ArrayBuffer', file => reader.readAsArrayBuffer(file)],
-      ['BinaryString', file => reader.readAsBinaryString(file)]
+      ['Text', (file) => reader.readAsText(file)],
+      ['DataURL', (file) => reader.readAsDataURL(file)],
+      ['ArrayBuffer', (file) => reader.readAsArrayBuffer(file)],
+      ['BinaryString', (file) => reader.readAsBinaryString(file)]
     ]).get(type)(file)
   })
 }

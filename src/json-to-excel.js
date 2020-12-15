@@ -12,7 +12,7 @@ const jsonToExcel = (sheets, download) => {
 
   const options = { bookType: 'xlsx', type: 'array' }
   const workBook = utils.book_new()
-  sheets.forEach(item => {
+  sheets.forEach((item) => {
     const workSheet = utils.json_to_sheet(item.body)
     utils.book_append_sheet(workBook, workSheet, item.name)
   })
