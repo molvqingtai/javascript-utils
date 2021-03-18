@@ -1,5 +1,6 @@
 import typeOf from './type-of.js'
 import isEmpty from './is-empty.js'
+import indexSwap from './index-swap.js'
 import asyncLoopTimer from './async-loop-timer.js'
 import asyncQueryRegexor from './async-query-regexor.js'
 import asyncQuerySelector from './async-query-selector.js'
@@ -7,11 +8,12 @@ import fileToData from './file-to-data.js'
 import imageToFile from './image-to-file.js'
 import urlToImage from './url-to-image.js'
 import jsonToExcel from './json-to-excel.js'
-import templateElement from './template-element.js'
+import makeElement from './make-element.js'
 
 export {
   typeOf,
   isEmpty,
+  indexSwap,
   asyncLoopTimer,
   asyncQueryRegexor,
   asyncQuerySelector,
@@ -19,5 +21,5 @@ export {
   imageToFile,
   urlToImage,
   jsonToExcel,
-  templateElement
+  makeElement
 }

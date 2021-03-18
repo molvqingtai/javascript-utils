@@ -101,6 +101,37 @@ isEmpty(false) // => false
 
 
 
+### indexSwap
+
+> 数组索引交换
+
+**Targets**
+
+web, node
+
+**Arguments**
+
+target(Array): 必选，目标数组
+
+indexX(number): 交换索引 X
+
+indexY(number): 交换索引 Y
+
+**Returns**
+
+(Array): 交换索引后的数组
+
+**Example**
+
+```javascript
+const target = [1,2,3,4]
+const array = indexSwap(target,1,2)
+console.log(array)
+// => [1,3,2,4]
+```
+
+
+
 ### asyncLoopTimer
 
 > 异步定时器，循环执行一个函数直到返回的值不为空，或超出设定时间
@@ -327,7 +358,7 @@ web
 
 sheets(Array): 必选，Excel Sheet 列表
 
-download(String): 可选，下载 Excel 文件名称，如果有此参数将尝试客户端下载
+name(String): 可选，下载 Excel 文件名称，如果有此参数将尝试客户端下载
 
 **Rturns**
 
@@ -364,9 +395,9 @@ const url = jsonToExcel(sheets,'file-name')
 
 
 
-### templateElement
+### makeElement
 
-> 字符串模板创建元素
+> 模板字符串创建元素
 
 **Targets**
 
@@ -383,7 +414,7 @@ template(String): 必选，字符串模板
 **Example**
 
 ```javascript
-const element = templateElement(`<h1> Utils Tests </h1>`)
+const element = makeElement(`<h1> Utils Tests </h1>`)
 console.log(element)
 
 // => HTMLHeadingElement

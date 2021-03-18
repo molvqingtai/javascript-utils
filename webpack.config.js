@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier')
 const WebpackBundleAnalyzer = require('webpack-bundle-analyzer')
 
-module.exports = env => {
+module.exports = (env) => {
   return {
     mode: env,
     watch: env === 'development',
@@ -35,16 +35,16 @@ module.exports = env => {
         }
       ]
     },
-    plugins: env === 'development' ? [
-      new webpack.ProgressPlugin(),
-      new WebpackBuildNotifierPlugin()
-    ] : [
-      new webpack.ProgressPlugin(),
-      new CleanWebpackPlugin(),
-      new WebpackBuildNotifierPlugin(),
-      new WebpackBundleAnalyzer.BundleAnalyzerPlugin({
-        openAnalyzer: false
-      })
-    ]
+    plugins:
+      env === 'development'
+        ? [new webpack.ProgressPlugin(), new WebpackBuildNotifierPlugin()]
+        : [
+            new webpack.ProgressPlugin(),
+            new CleanWebpackPlugin(),
+            new WebpackBuildNotifierPlugin(),
+            new WebpackBundleAnalyzer.BundleAnalyzerPlugin({
+              openAnalyzer: false
+            })
+          ]
   }
 }
