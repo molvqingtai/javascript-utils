@@ -7,12 +7,12 @@ import isEmpty from './is-empty.js'
  * @return {Promise}
  */
 const asyncLoopTimer = (func, timeout = Infinity) => {
+  const startTime = performance.now()
   return new Promise((resolve) => {
-    let timerId = null
-    const startTime = +new Date()
-    const timer = async () => {
-      const nowTime = +new Date()
+    const timer = async (nowTime) => {
       const data = await func()
+      console.log(isEmpty(data))
+
       if (!isEmpty(data) || nowTime - startTime > timeout) {
         window.cancelAnimationFrame(timerId)
         resolve(data)
@@ -21,7 +21,7 @@ const asyncLoopTimer = (func, timeout = Infinity) => {
         timerId = window.requestAnimationFrame(timer)
       }
     }
-    timerId = window.requestAnimationFrame(timer)
+    let timerId = window.requestAnimationFrame(timer)
   })
 }
 

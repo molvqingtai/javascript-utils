@@ -28,6 +28,6 @@ const typesMap = new Map([
   ['Request', () => false]
 ])
 
-const isEmpty = (value) => (value instanceof Element ? typesMap.get(typeOf(value))(value) : false)
+const isEmpty = (value) => (value instanceof Element ? false : typesMap.get(typeOf(value))(value))
 
 export default isEmpty
