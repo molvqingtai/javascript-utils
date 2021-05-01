@@ -1,7 +1,7 @@
 /**
  * 缓冲定时器
  * @param  {function} func       [回调方法]
- * @param  {number}   delay      [循环时长，默认 1000ms]
+ * @param  {number}   delay      [循环时长，默认 10000ms]
  * @param  {number}   startSpeed [开始速度，默认 100ms]
  * @param  {number}   endSpeed   [结束速度，默认 1000ms]
  * @return {promise<number>}     timestamp  [结束时间戳]

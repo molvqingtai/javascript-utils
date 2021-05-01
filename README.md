@@ -434,7 +434,7 @@ browser
 
 func(function): 必选，回调方法
 
-delay(number): 可选，循环时长，默认 1000ms
+delay(number): 可选，循环时长，默认 10000ms
 
 startSpeed(number): 可选，开始速度，默认 100ms
 
