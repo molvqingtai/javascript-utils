@@ -10,7 +10,7 @@ const setTimeEaseOut = (func, options = {}) =>
   new Promise((resolve, reject) => {
     let { delay = 10000, startSpeed = 100, endSpeed = 1000 } = options
     const startTime = performance.now()
-    const setup = (endTime) => {
+    const render = (endTime) => {
       cancelAnimationFrame(requestID)
       if (endTime - startTime < delay) {
         const timeoutID = setTimeout(() => {
@@ -22,13 +22,13 @@ const setTimeEaseOut = (func, options = {}) =>
             return
           }
           startSpeed = ((endTime - startTime) / delay) * endSpeed
-          requestID = requestAnimationFrame(setup)
+          requestID = requestAnimationFrame(render)
         }, startSpeed)
       } else {
         resolve(+new Date())
       }
     }
-    let requestID = requestAnimationFrame(setup)
+    let requestID = requestAnimationFrame(render)
   })
 
 export default setTimeEaseOut
