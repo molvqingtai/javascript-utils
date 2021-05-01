@@ -11,8 +11,6 @@ const asyncLoopTimer = (func, timeout = Infinity) => {
   return new Promise((resolve) => {
     const timer = async (nowTime) => {
       const data = await func()
-      console.log(isEmpty(data))
-
       if (!isEmpty(data) || nowTime - startTime > timeout) {
         window.cancelAnimationFrame(timerId)
         resolve(data)
