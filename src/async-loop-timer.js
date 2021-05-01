@@ -10,16 +10,15 @@ const asyncLoopTimer = (func, timeout = Infinity) => {
   const startTime = performance.now()
   return new Promise((resolve) => {
     const timer = async (nowTime) => {
+      cancelAnimationFrame(requestID)
       const data = await func()
       if (!isEmpty(data) || nowTime - startTime > timeout) {
-        window.cancelAnimationFrame(timerId)
         resolve(data)
       } else {
-        window.cancelAnimationFrame(timerId)
-        timerId = window.requestAnimationFrame(timer)
+        requestID = requestAnimationFrame(timer)
       }
     }
-    let timerId = window.requestAnimationFrame(timer)
+    let requestID = requestAnimationFrame(timer)
   })
 }
 

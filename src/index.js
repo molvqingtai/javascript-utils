@@ -9,6 +9,7 @@ import imageToFile from './image-to-file.js'
 import urlToImage from './url-to-image.js'
 import jsonToExcel from './json-to-excel.js'
 import makeElement from './make-element.js'
+import setTimeEaseOut from './set-time-ease-out'
 
 export {
   typeOf,
@@ -21,5 +22,6 @@ export {
   imageToFile,
   urlToImage,
   jsonToExcel,
-  makeElement
+  makeElement,
+  setTimeEaseOut
 }

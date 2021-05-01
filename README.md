@@ -42,7 +42,7 @@ const utils = require('javascript-utils/dist/index.js')
 
 **Targets**
 
-web, node
+browser , node
 
 **Arguments**
 
@@ -70,7 +70,7 @@ typeOf({name:'john'}) === 'Object' // => true
 
 **Targets**
 
-web, node
+browser , node
 
 **Arguments**
 
@@ -107,7 +107,7 @@ isEmpty(false) // => false
 
 **Targets**
 
-web, node
+browser , node
 
 **Arguments**
 
@@ -138,7 +138,7 @@ console.log(array)
 
 **Targets**
 
-web
+browser 
 
 **Arguments**
 
@@ -172,7 +172,7 @@ asyncLoopTimer(() => log(+new Date()), 1000).then(res => log(`timeout: ${res}`))
 
 **Targets**
 
-web
+browser 
 
 **Arguments**
 
@@ -211,7 +211,7 @@ setTimeout(() => {
 
 **Targets**
 
-web
+browser 
 
 **Arguments**
 
@@ -252,7 +252,7 @@ setTimeout(() => {
 
 **Targets**
 
-web
+browser 
 
 **Arguments**
 
@@ -289,7 +289,7 @@ input.onchange = async e => {
 
 **Targets**
 
-web
+browser 
 
 **Arguments**
 
@@ -323,7 +323,7 @@ console.log(file)
 
 **Targets**
 
-web
+browser 
 
 **Arguments**
 
@@ -352,7 +352,7 @@ console.log(image)
 
 **Targets**
 
-web
+browser 
 
 **Arguments**
 
@@ -401,7 +401,7 @@ const url = jsonToExcel(sheets,'file-name')
 
 **Targets**
 
-web
+browser 
 
 **Arguments**
 
@@ -418,5 +418,46 @@ const element = makeElement(`<h1> Utils Tests </h1>`)
 console.log(element)
 
 // => HTMLHeadingElement
+```
+
+
+
+### setTimeEaseOut
+
+> 缓冲定时器
+
+**Targets**
+
+browser 
+
+**Arguments**
+
+func(function): 必选，回调方法
+
+delay(number): 可选，循环时长，默认 1000ms
+
+startSpeed(number): 可选，开始速度，默认 100ms
+
+endSpeed(number): 可选，结束速度，默认 1000ms
+
+**Rturns**
+
+promise(number): timestamp 结束时间戳
+
+**Example**
+
+```javascript
+;(async () => {
+  console.time('answer time')
+  const done = await utils.setTimeEaseOut(() => console.log(Math.floor(Math.random() * (100 + 1))), { 
+    delay: 5000,
+    startSpeed: 100,
+    endSpeed: 1000
+  })
+  console.log(done)
+  console.timeEnd('answer time')
+})().catch((error) => {
+  console.log(error)
+})
 ```
 

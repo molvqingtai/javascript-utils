@@ -37,9 +37,18 @@
       //   ],
       //   'test-name'
       // )
-
-      const log = (message) => console.log(message)
-      utils.asyncLoopTimer(() => log(+new Date()), 5000).then((res) => log(`timeout: ${res}`))
+      ;(async () => {
+        console.time('answer time')
+        const done = await utils.setTimeEaseOut(() => console.log(Math.floor(Math.random() * (100 + 1))), {
+          delay: 5000,
+          startSpeed: 100,
+          endSpeed: 1000
+        })
+        console.log(done)
+        console.timeEnd('answer time')
+      })().catch((error) => {
+        console.log(error)
+      })
     </script>
   </body>
 </html>
